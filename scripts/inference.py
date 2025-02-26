@@ -35,7 +35,7 @@ def main(config, args):
 
     audio_encoder = Audio2Feature(model_path=whisper_model_path, device="cuda", num_frames=config.data.num_frames)
 
-    vae = AutoencoderKL.from_pretrained("stabilityai/sd-vae-ft-mse", torch_dtype=torch.float16)
+    vae = AutoencoderKL.from_pretrained("checkpoints/vae_model", torch_dtype=torch.float16)
     vae.config.scaling_factor = 0.18215
     vae.config.shift_factor = 0
 
